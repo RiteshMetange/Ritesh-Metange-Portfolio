@@ -1,0 +1,181 @@
+/* Page Background */
+body {
+    background-image: linear-gradient(to top, #0f172a 0%, #1e1b4b 50%, #243b55 100%);
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Section */
+.museum-hall {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Title */
+h1 {
+    color: #d4af37;
+    font-size: 45px;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+/* Gallery Layout */
+.gallery-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+/* Card Frame */
+.painting-frame {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    padding: 18px;
+    border-radius: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    width: 100%;
+    max-width: 350px;
+
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Responsive content layout */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Hover effect */
+.painting-frame:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Image */
+.painting-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Title plaque */
+.plaque {
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #e0e0e0;
+
+    padding: 10px 12px;
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 35px;
+    }
+
+    .museum-hall {
+        padding: 30px 15px;
+    }
+
+    .gallery-wall {
+        gap: 22px;
+    }
+
+    .painting-frame {
+        padding: 15px;
+        max-width: 100%;
+    }
+}
+
+/* ---------------- MODAL ---------------- */
+
+/* Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.85);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Modal Image */
+.modal-content {
+    margin: auto;
+    display: block;
+
+    max-width: 90%;
+    max-height: 80vh;
+
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+
+    animation: zoomIn 0.3s ease;
+}
+
+/* Zoom Animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Close Button */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: #d4af37;
+}
+
+/* Mobile Close Button */
+@media (max-width: 600px) {
+    .close-modal {
+        top: 10px;
+        right: 20px;
+        font-size: 38px;
+    }
+}
