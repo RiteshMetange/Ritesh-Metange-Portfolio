@@ -23,6 +23,8 @@ a {
 }
 
 body {
+   /*new change to stop page reload  */
+   overscroll-behavior-y: none;
   color: #2b2c48;
   font-family: "Jost", sans-serif;
   background-image: url('./modern-technology-workspace-with-laptop-computer-desk_1355276-10034.avif');
